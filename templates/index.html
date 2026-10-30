@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git Ghost — The Haunted Repository</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brand-mark">☠</span> GIT<span>GHOST</span></a>
+      <div class="status"><i></i> LOCAL ENTITY CONTAINED</div>
+    </header>
+
+    <section class="hero" id="intro">
+      <div class="eyebrow">A DIGITAL SEANCE FOR YOUR CODEBASE</div>
+      <div class="ghost-art" aria-hidden="true">
+        <div class="ghost-aura"></div><div class="ghost-body"><div class="eyes"><b></b><b></b></div><div class="mouth"></div></div>
+      </div>
+      <h1>THE CODE<br><span>NEVER DIES.</span></h1>
+      <p class="hero-copy">Every commit leaves a trace. Every deleted line has a story.<br>Summon the spirit buried inside your Git repository.</p>
+      <div class="repo-form">
+        <label for="repoPath">REPOSITORY PATH</label>
+        <div class="input-row">
+          <input id="repoPath" type="text" placeholder="C:\Users\you\projects\my-repo  or  /home/you/project">
+          <button id="summonBtn"><span>☠</span> SUMMON</button>
+        </div>
+        <small>Runs locally. Enter a folder containing a Git repository.</small>
+      </div>
+      <div class="terminal" id="terminal">
+        <div class="terminal-head"><span>GHOST_PROTOCOL.exe</span><span>● ● ●</span></div>
+        <div class="terminal-lines" id="terminalLines">
+          <p><em>[SYSTEM]</em> Waiting for a repository...</p>
+          <p><em>[SYSTEM]</em> The séance circle is ready.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="dash-heading">
+        <div><div class="eyebrow">ENTITY DETECTED</div><h2 id="repoName">Repository</h2><p id="repoMeta" class="muted"></p></div>
+        <button class="ghost-button" id="newScan">↻ RESCAN</button>
+      </div>
+      <div class="stats">
+        <article class="stat"><span>COMMITS UNEARTHED</span><strong id="commitCount">—</strong><small>Recorded memories</small></article>
+        <article class="stat danger"><span>DELETION EVENTS</span><strong id="deletedCount">—</strong><small>Resting in peace</small></article>
+        <article class="stat"><span>TRACKED FILES</span><strong id="fileCount">—</strong><small>Living artifacts</small></article>
+        <article class="stat"><span>ACTIVE BRANCH</span><strong class="branch-value" id="branchName">—</strong><small id="branchCount">— branches</small></article>
+      </div>
+      <div class="content-grid">
+        <section class="panel">
+          <div class="panel-title"><span>🪦 THE GRAVEYARD</span><small>DELETED FILES</small></div>
+          <div id="graveyard" class="graveyard"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-title"><span>🕰 HAUNTED TIMELINE</span><small>RECENT COMMITS</small></div>
+          <div id="timeline" class="timeline"></div>
+        </section>
+      </div>
+      <section class="panel séance-panel">
+        <div class="panel-title"><span>🔮 THE SÉANCE</span><small>ASK THE ENTITY</small></div>
+        <div class="chat-log" id="chatLog"><div class="bubble ghost-bubble"><b>GIT GHOST</b><p>I'm listening. Ask about the memories buried in this repository.</p></div></div>
+        <form id="chatForm" class="chat-form">
+          <input id="question" placeholder="What secrets does this repository hold?" autocomplete="off">
+          <button type="submit">SEND ↗</button>
+        </form>
+        <div class="chat-note">AI answers use local Ollama when available. Git metadata is the source of truth.</div>
+      </section>
+    </section>
+    <footer>GIT GHOST <span>·</span> A LOCAL-FIRST OPEN-SOURCE EXPERIMENT <span>·</span> 2026</footer>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
